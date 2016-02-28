@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B9524B11C7AC5C10028169A"
+               BuildableName = "OpenLibraryRequest.app"
+               BlueprintName = "OpenLibraryRequest"
+               ReferencedContainer = "container:OpenLibraryRequest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B9524C81C7AC5C20028169A"
+               BuildableName = "OpenLibraryRequestTests.xctest"
+               BlueprintName = "OpenLibraryRequestTests"
+               ReferencedContainer = "container:OpenLibraryRequest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B9524D31C7AC5C20028169A"
+               BuildableName = "OpenLibraryRequestUITests.xctest"
+               BlueprintName = "OpenLibraryRequestUITests"
+               ReferencedContainer = "container:OpenLibraryRequest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5B9524B11C7AC5C10028169A"
+            BuildableName = "OpenLibraryRequest.app"
+            BlueprintName = "OpenLibraryRequest"
+            ReferencedContainer = "container:OpenLibraryRequest.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5B9524B11C7AC5C10028169A"
+            BuildableName = "OpenLibraryRequest.app"
+            BlueprintName = "OpenLibraryRequest"
+            ReferencedContainer = "container:OpenLibraryRequest.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5B9524B11C7AC5C10028169A"
+            BuildableName = "OpenLibraryRequest.app"
+            BlueprintName = "OpenLibraryRequest"
+            ReferencedContainer = "container:OpenLibraryRequest.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

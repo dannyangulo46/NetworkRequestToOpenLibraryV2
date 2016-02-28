@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5B9524B61C7AC5C10028169A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524B51C7AC5C10028169A /* AppDelegate.swift */; };
-		5B9524B81C7AC5C10028169A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524B71C7AC5C10028169A /* ViewController.swift */; };
+		5B9524B81C7AC5C10028169A /* ISBNDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524B71C7AC5C10028169A /* ISBNDisplayViewController.swift */; };
 		5B9524BB1C7AC5C10028169A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9524B91C7AC5C10028169A /* Main.storyboard */; };
 		5B9524BE1C7AC5C10028169A /* OpenLibraryRequest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524BC1C7AC5C10028169A /* OpenLibraryRequest.xcdatamodeld */; };
 		5B9524C01C7AC5C10028169A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B9524BF1C7AC5C10028169A /* Assets.xcassets */; };
 		5B9524C31C7AC5C10028169A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B9524C11C7AC5C10028169A /* LaunchScreen.storyboard */; };
 		5B9524CE1C7AC5C20028169A /* OpenLibraryRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524CD1C7AC5C20028169A /* OpenLibraryRequestTests.swift */; };
 		5B9524D91C7AC5C20028169A /* OpenLibraryRequestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524D81C7AC5C20028169A /* OpenLibraryRequestUITests.swift */; };
+		5B9524E71C7C2BC20028169A /* ISBNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524E61C7C2BC20028169A /* ISBNTableViewController.swift */; };
+		5B9524E91C7D32AD0028169A /* ISBNSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524E81C7D32AD0028169A /* ISBNSearchViewController.swift */; };
+		5B9524EB1C7D40890028169A /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9524EA1C7D40890028169A /* BookInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		5B9524B21C7AC5C10028169A /* OpenLibraryRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenLibraryRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9524B51C7AC5C10028169A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B9524B71C7AC5C10028169A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B9524B71C7AC5C10028169A /* ISBNDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISBNDisplayViewController.swift; sourceTree = "<group>"; };
 		5B9524BA1C7AC5C10028169A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B9524BD1C7AC5C10028169A /* OpenLibraryRequest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenLibraryRequest.xcdatamodel; sourceTree = "<group>"; };
 		5B9524BF1C7AC5C10028169A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		5B9524D41C7AC5C20028169A /* OpenLibraryRequestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenLibraryRequestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9524D81C7AC5C20028169A /* OpenLibraryRequestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryRequestUITests.swift; sourceTree = "<group>"; };
 		5B9524DA1C7AC5C20028169A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9524E61C7C2BC20028169A /* ISBNTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNTableViewController.swift; sourceTree = "<group>"; };
+		5B9524E81C7D32AD0028169A /* ISBNSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSearchViewController.swift; sourceTree = "<group>"; };
+		5B9524EA1C7D40890028169A /* BookInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				5B9524B51C7AC5C10028169A /* AppDelegate.swift */,
-				5B9524B71C7AC5C10028169A /* ViewController.swift */,
+				5B9524EA1C7D40890028169A /* BookInfo.swift */,
+				5B9524E61C7C2BC20028169A /* ISBNTableViewController.swift */,
+				5B9524E81C7D32AD0028169A /* ISBNSearchViewController.swift */,
+				5B9524B71C7AC5C10028169A /* ISBNDisplayViewController.swift */,
 				5B9524B91C7AC5C10028169A /* Main.storyboard */,
 				5B9524BF1C7AC5C10028169A /* Assets.xcassets */,
 				5B9524C11C7AC5C10028169A /* LaunchScreen.storyboard */,
@@ -259,9 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9524EB1C7D40890028169A /* BookInfo.swift in Sources */,
 				5B9524BE1C7AC5C10028169A /* OpenLibraryRequest.xcdatamodeld in Sources */,
-				5B9524B81C7AC5C10028169A /* ViewController.swift in Sources */,
+				5B9524E91C7D32AD0028169A /* ISBNSearchViewController.swift in Sources */,
+				5B9524B81C7AC5C10028169A /* ISBNDisplayViewController.swift in Sources */,
 				5B9524B61C7AC5C10028169A /* AppDelegate.swift in Sources */,
+				5B9524E71C7C2BC20028169A /* ISBNTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +500,7 @@
 				5B9524DF1C7AC5C20028169A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B9524E01C7AC5C20028169A /* Build configuration list for PBXNativeTarget "OpenLibraryRequestTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +509,7 @@
 				5B9524E21C7AC5C20028169A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B9524E31C7AC5C20028169A /* Build configuration list for PBXNativeTarget "OpenLibraryRequestUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +518,7 @@
 				5B9524E51C7AC5C20028169A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
