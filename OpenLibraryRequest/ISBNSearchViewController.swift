@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class ISBNSearchViewController: UIViewController, UITextFieldDelegate {
 
+    var managedObjectContext: NSManagedObjectContext? = nil
+    
     
     
     @IBOutlet weak var textToSearh: UITextField!
@@ -28,6 +31,10 @@ class ISBNSearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         imageViewBookPicture.contentMode = .ScaleAspectFit
+        
+        managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
+        
     }
 
     // Mark: - TEXTFIELD DELEGATES
@@ -43,11 +50,17 @@ class ISBNSearchViewController: UIViewController, UITextFieldDelegate {
         
         
         if (textField.text?.characters.count<13) { // Check if the ISBN as 13 numbers
-            lblMessageToUser.text = "Al ISBN le faltan mas numeros, deben de ser 13"
-            
-        } else {
-            asyncNetworkRequest(addDashesToISBN(textField.text!))
+                lblMessageToUser.text = "Al ISBN le faltan mas numeros, deben de ser 13"
+                return true
         }
+            
+        if (checkIsbnInList(addDashesToISBN(textField.text!))) {
+            lblMessageToUser.text = "ISBN already on your list"
+            return true
+            
+        }
+        
+        asyncNetworkRequest(addDashesToISBN(textField.text!))
         
         
         return true
@@ -153,7 +166,7 @@ class ISBNSearchViewController: UIViewController, UITextFieldDelegate {
                 
                 guard let imageDic = dic2["cover"] as? NSDictionary else {
                     print("Book does not have an image")
-                    let newBook = BookInfo(ISBN: isbn, title: title!, authors: allAuthors!, image: nil)
+                    let newBook = BookInfo(ISBN: isbn, title: title!, authors: allAuthors!, image: UIImage(named: "bookImage"))
                     self.addBookToDataModel(newBook)
                     return
                 }
@@ -161,7 +174,7 @@ class ISBNSearchViewController: UIViewController, UITextFieldDelegate {
                 
                 guard let imageURLString = imageDic["large"] as? String else {
                     print("Book does not have a large image")
-                    let newBook = BookInfo(ISBN: isbn, title: title!, authors: allAuthors!, image: nil)
+                    let newBook = BookInfo(ISBN: isbn, title: title!, authors: allAuthors!, image: UIImage(named: "bookImage"))
                     self.addBookToDataModel(newBook)
                     return
                 }
@@ -207,6 +220,19 @@ class ISBNSearchViewController: UIViewController, UITextFieldDelegate {
     //Helper Functions
     
     func addBookToDataModel(newBook: BookInfo){
+        
+        let newEntityBook = NSEntityDescription.insertNewObjectForEntityForName("BookTable", inManagedObjectContext: managedObjectContext!)
+        
+        newEntityBook.setValue(newBook.ISBN, forKey: "isbn")
+        newEntityBook.setValue(newBook.authors, forKey: "author")
+        newEntityBook.setValue(newBook.title, forKey: "title")
+        newEntityBook.setValue(UIImagePNGRepresentation(newBook.image!), forKey: "image")
+        
+        do {
+            try self.managedObjectContext?.save()
+            
+            
+        } catch {}
         
         (UIApplication.sharedApplication().delegate as! AppDelegate).books.append(newBook)
         
@@ -255,6 +281,18 @@ class ISBNSearchViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
+    
+    // Helper function to check if isbn already part of the list
+    
+    func checkIsbnInList(isbn: String) -> Bool {
+        
+        for eachBook in (UIApplication.sharedApplication().delegate as! AppDelegate).books {
+            if eachBook.ISBN == isbn {
+                return true
+            }
+        }
+        return false
+    }
     
     
     @IBAction func onDone(sender: UIBarButtonItem) {
